@@ -11,6 +11,14 @@
   border-radius: 8px;
   height: 100px;
 }
+.quantity {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  justify-content: space-between;
+  padding: 0px 15px;
+}
 .card button {
   width: 100%;
   margin-top: 14px;

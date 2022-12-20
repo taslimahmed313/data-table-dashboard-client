@@ -2,6 +2,7 @@ import jsPDF from 'jspdf';
 import "jspdf-autotable";
 import React, { useEffect, useRef, useState } from 'react';
 import { CSVLink } from 'react-csv';
+import { toast } from 'react-hot-toast';
 import { BiDotsVertical } from "react-icons/bi";
 import { CiEdit } from "react-icons/ci";
 import { FaFileCsv, FaPrint, FaTrash } from 'react-icons/fa';
@@ -29,12 +30,27 @@ const DataTable = () => {
       setData(data);
     })
   },[])
+  console.log(data)
 
   const generatePDF = () => {
     const doc = new jsPDF();
     doc.autoTable({ html: "#dataTable" });
     doc.save("aide employee.pdf");
   };
+
+
+  const handleDelete = id =>{
+    fetch(`http://localhost:5000/data/${id}`,{
+      method: "DELETE",
+    })
+    .then(res => res.json())
+    .then(data => {
+      console.log(data)
+      if(data.deletedCount > 0){
+        toast.success("Data Deleted Successfully !!")
+      }
+    })
+  }
   
     return (
       <div>
@@ -59,7 +75,11 @@ const DataTable = () => {
           </div>
           <div className="export-btn">
             <ReactToPrint
-              trigger={() => <div><FaPrint></FaPrint> Print</div>}
+              trigger={() => (
+                <div>
+                  <FaPrint></FaPrint> Print
+                </div>
+              )}
               content={() => ref.current}
             ></ReactToPrint>
           </div>
@@ -101,7 +121,7 @@ const DataTable = () => {
                       <button>
                         <CiEdit />
                       </button>
-                      <button>
+                      <button onClick={() => handleDelete(d._id)}>
                         <FaTrash />
                       </button>
                     </div>
