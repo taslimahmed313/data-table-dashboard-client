@@ -1,0 +1,42 @@
+[
+  {
+    "img": "https://images.hdqwalls.com/wallpapers/bthumb/coca-cola-hd.jpg",
+    "name": "CocaCola",
+    "price": "45"
+  },
+  {
+    "img": "https://img.freepik.com/free-photo/cooked-plain-white-basmati-rice-steamed-rice-bowl_466689-74933.jpg?size=626&ext=jpg&ga=GA1.2.939492190.1661093851",
+    "name": "Chasi Rice",
+    "price": "145"
+  },
+  {
+    "img": "https://c0.wallpaperflare.com/preview/673/637/258/nature-food-salt-sea-salt.jpg",
+    "name": "ACI Salt",
+    "price": "35"
+  },
+  {
+    "img": "https://c4.wallpaperflare.com/wallpaper/739/846/567/vera-velichko-potions-liquid-fire-wallpaper-preview.jpg",
+    "name": "Jaytun Oil",
+    "price": "235"
+  },
+  {
+    "img": "https://www.finedininglovers.com/sites/g/files/xknfdk626/files/2021-08/Milk.jpg",
+    "name": "Milk Liquid",
+    "price": "45"
+  },
+  {
+    "img": "https://wallpapers.com/images/hd/hot-coffee-bean-bag-ybczgeaxjd8z3s0g.jpg",
+    "name": "Coffee Nut",
+    "price": "445"
+  },
+  {
+    "img": "https://c4.wallpaperflare.com/wallpaper/906/211/722/ko-ko-ko-wallpaper-preview.jpg",
+    "name": "Hair Oil",
+    "price": "375"
+  },
+  {
+    "img": "https://www.teahub.io/photos/full/80-804898_download-wallpaper-mineral-water-in-a-glass-mineral.jpg",
+    "name": "Spa Water",
+    "price": "32"
+  }
+]

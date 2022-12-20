@@ -1,0 +1,10 @@
+.products {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin: 50px 100px;
+  gap: 20px;
+}
+.loader {
+  width: 80px;
+  margin: 45vh auto;
+}
