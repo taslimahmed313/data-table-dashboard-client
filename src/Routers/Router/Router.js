@@ -5,6 +5,7 @@ import DataTable from "../../Pages/Dashboard/DataTable/DataTable";
 import Home from "../../Pages/Home/Home/Home";
 import Login from "../../Pages/Shared/Authentication/Login/Login";
 import Signup from "../../Pages/Shared/Authentication/Signup/Signup";
+import PrivateRoute from "../PrivateRoute/PrivateRoute";
 
 export const router = createBrowserRouter([
   {
@@ -17,17 +18,21 @@ export const router = createBrowserRouter([
       },
       {
         path: "/login",
-        element: <Login></Login>
+        element: <Login></Login>,
       },
       {
         path: "/signup",
-        element: <Signup></Signup>
-      }
+        element: <Signup></Signup>,
+      },
     ],
   },
   {
     path: "/dashboard",
-    element: <DashboardLayout></DashboardLayout>,
+    element: (
+      <PrivateRoute>
+        <DashboardLayout></DashboardLayout>
+      </PrivateRoute>
+    ),
     children: [
       {
         path: "/dashboard",
