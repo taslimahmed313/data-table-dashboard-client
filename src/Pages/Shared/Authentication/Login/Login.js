@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { toast } from 'react-hot-toast';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../../Contexts/AuthProvider/AuthProvider';
 
 const Login = () => {
@@ -47,6 +47,7 @@ const Login = () => {
               <div className="button">
                 <input type="submit" value="Login" />
               </div>
+              <p>New to Aide solutions ltd? please <Link to="/signup">Signup</Link> </p>
             </form>
           </div>
         </div>

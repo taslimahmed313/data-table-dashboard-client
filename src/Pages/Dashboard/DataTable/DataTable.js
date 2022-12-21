@@ -7,13 +7,14 @@ import { BiDotsVertical } from "react-icons/bi";
 import { CiEdit } from "react-icons/ci";
 import { FaFileCsv, FaPrint, FaTrash } from 'react-icons/fa';
 import { ImFilePdf } from "react-icons/im";
+import { Link } from 'react-router-dom';
 import BarLoader from 'react-spinners/BarLoader';
 import ReactToPrint from 'react-to-print';
 import "./DataTable.css";
 
 
 const DataTable = () => {
-  const headers = ["data", "Age", "data", "State", "data", "data", "Phone", "Fax", "Email", "Web", "data", "data", "data", "data", "End", ""];
+  const headers = ["name", "age", "city", "comp", "count", "mail", "end", "fax", "phon", "stay", "post", "fee", "start", "state", "web", ""];
 
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -100,28 +101,33 @@ const DataTable = () => {
                 <tr key={d._id}>
                   <td>{d.name}</td>
                   <td>{d.age}</td>
-                  <td>data</td>
-                  <td>data</td>
-                  <td>data</td>
-                  <td>data</td>
-                  <td>data</td>
-                  <td>data</td>
-                  <td>data</td>
-                  <td>data</td>
-                  <td>data</td>
-                  <td>data</td>
-                  <td>data</td>
-                  <td>data</td>
-                  <td>data</td>
+                  <td>{d.city}</td>
+                  <td>{d.company}</td>
+                  <td>{d.country}</td>
+                  <td>{d.email}</td>
+                  <td>{d.end}</td>
+                  <td>{d.fax}</td>
+                  <td>{d.phone}</td>
+                  <td>{d.position}</td>
+                  <td>{d.postal}</td>
+                  <td>{d.salary}</td>
+                  <td>{d.start}</td>
+                  <td>{d.state}</td>
+                  <td>{d.web}</td>
                   <td className="dropdown">
                     <button className="dropbtn">
                       <BiDotsVertical />
                     </button>
                     <div className="dropdown-content">
-                      <button>
-                        <CiEdit />
+                      <button className="btn-icon">
+                        <Link to={`/dashboard/edit/${d._id}`}>
+                          <CiEdit className="edit-icon" />
+                        </Link>
                       </button>
-                      <button onClick={() => handleDelete(d._id)}>
+                      <button
+                        className="btn-icon"
+                        onClick={() => handleDelete(d._id)}
+                      >
                         <FaTrash />
                       </button>
                     </div>
