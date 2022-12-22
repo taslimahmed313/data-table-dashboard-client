@@ -2,7 +2,8 @@ import { createBrowserRouter } from "react-router-dom";
 import DashboardLayout from "../../Layout/DashboardLayout/DashboardLayout";
 import Main from "../../Layout/Main/Main";
 import AddProduct from "../../Pages/Dashboard/AddProduct/AddProduct";
-import DataTable from "../../Pages/Dashboard/DataTable/DataTable";
+import AddUser from "../../Pages/Dashboard/AddUser/AddUser";
+import AllUsers from "../../Pages/Dashboard/AllUsers/AllUsers";
 import Edit from "../../Pages/Dashboard/Edit/Edit";
 import Home from "../../Pages/Home/Home/Home";
 import Login from "../../Pages/Shared/Authentication/Login/Login";
@@ -38,17 +39,22 @@ export const router = createBrowserRouter([
     children: [
       {
         path: "/dashboard",
-        element: <DataTable></DataTable>,
+        element: <AllUsers></AllUsers>,
       },
       {
         path: "/dashboard/edit/:id",
         element: <Edit></Edit>,
-        loader: ({params}) => fetch(`https://aide-task-server.vercel.app/data/${params.id}`),
+        loader: ({ params }) =>
+          fetch(`https://aide-task-server.vercel.app/data/${params.id}`),
       },
       {
         path: "/dashboard/addProduct",
-        element: <AddProduct></AddProduct>
-      }
+        element: <AddProduct></AddProduct>,
+      },
+      {
+        path: "/dashboard/addUser",
+        element: <AddUser></AddUser>,
+      },
     ],
   },
 ]);

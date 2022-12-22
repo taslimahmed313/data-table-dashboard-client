@@ -38,7 +38,7 @@
 }
 .table td,
 .table th {
-  border: 1px solid #ddd;
+  border: 1px solid rgb(255, 255, 255);
   text-align: center;
   font-size: 12px;
   padding: 10px 1px;
@@ -102,7 +102,7 @@
 
 /* Change color of dropdown links on hover */
 .dropdown-content a:hover {
-  background-color: rgb(212, 209, 209);
+  background-color: rgb(255, 255, 255);
   transform: scale(1.25);
 }
 
@@ -113,7 +113,7 @@
 
 /* Change the background color of the dropdown button when the dropdown content is shown */
 .dropdown:hover .dropbtn {
-  background-color: #c3ccc4;
+  background-color: #ffffff;
 }
 
 /* Responsive */

@@ -10,12 +10,16 @@ const Card = ({product}) => {
           <img src={product.img} alt="" />
           <h4>{product.name}</h4>
           <p>{product.price} Taka</p>
-          <p className='quantity'>
-            Quantity: <FaPlusCircle onClick={() => setCount(count + 1)} />
-            {count}
-            <FaMinusCircle onClick={() => setCount(count - 1)}/>
-          </p>
-          <button>Add To Cart</button>
+
+          {count > 0 ? (
+            <p className="quantity">
+              Quantity: <FaPlusCircle onClick={() => setCount(count + 1)} />
+              {count}
+              <FaMinusCircle onClick={() => setCount(count - 1)} />
+            </p>
+          ) : (
+            <button onClick={() => setCount(count + 1)}>Add To Cart</button>
+          )}
         </div>
       </div>
     );

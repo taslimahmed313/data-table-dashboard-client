@@ -8,14 +8,15 @@ import { BiDotsVertical } from "react-icons/bi";
 import { CiEdit } from "react-icons/ci";
 import { FaFileCsv, FaPrint, FaTrash } from 'react-icons/fa';
 import { ImFilePdf } from "react-icons/im";
+import { TiArrowLoop, TiArrowMoveOutline, TiCogOutline } from "react-icons/ti";
 import { Link } from 'react-router-dom';
 import BarLoader from 'react-spinners/BarLoader';
 import ReactToPrint from 'react-to-print';
-import "./DataTable.css";
+import "./AllUsers.css";
 
 
-const DataTable = () => {
-  const headers = ["name", "age", "city", "comp", "count", "mail", "end", "fax", "phon", "stay", "post", "fee", "start", "state", "web", ""];
+const AllUsers = () => {
+  const headers = ["USER", "EMAIL", "ROLE", "PLAN", "STATUS", "ACTION"];
 
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -26,7 +27,7 @@ const DataTable = () => {
      queryKey: ["allData"],
      queryFn: async () => {
        try {
-         const res = await fetch("https://aide-task-server.vercel.app/data");
+         const res = await fetch("http://localhost:5000/allUser");
          const data = res.json();
          return data;
        } catch (error) {
@@ -60,7 +61,7 @@ const DataTable = () => {
     return (
       <div>
         <h2 className="table-title" id="tableTitle">
-          Aide Data Table
+          All Users
         </h2>
         <hr />
         <div className="exports-btn">
@@ -104,20 +105,22 @@ const DataTable = () => {
               {allData.map((d) => (
                 <tr key={d._id}>
                   <td>{d.name}</td>
-                  <td>{d.age}</td>
-                  <td>{d.city}</td>
-                  <td>{d.company}</td>
-                  <td>{d.country}</td>
                   <td>{d.email}</td>
-                  <td>{d.end}</td>
-                  <td>{d.fax}</td>
-                  <td>{d.phone}</td>
-                  <td>{d.position}</td>
-                  <td>{d.postal}</td>
-                  <td>{d.salary}</td>
-                  <td>{d.start}</td>
-                  <td>{d.state}</td>
-                  <td>{d.web}</td>
+                  <td>
+                    {d.role === "Author" ? (
+                      <>
+                        <TiCogOutline />
+                        {d.role}
+                      </>
+                    ) : d.role === "Maintainer" ? (
+                      <><TiArrowLoop/>{d.role}</>
+                    ) : (
+                      d.role === "Admin" ? <><TiArrowMoveOutline/>{d.role}</>:<></>
+                    )}
+                  </td>
+                  <td>{d.plan}</td>
+                  <td>{d.status}</td>
+                  <td>{d.action}</td>
                   <td className="dropdown">
                     <button className="dropbtn">
                       <BiDotsVertical />
@@ -145,4 +148,4 @@ const DataTable = () => {
     );
 };
 
-export default DataTable;
+export default AllUsers;

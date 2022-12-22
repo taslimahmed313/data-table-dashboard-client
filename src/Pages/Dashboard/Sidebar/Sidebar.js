@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaCartPlus, FaTable } from "react-icons/fa";
+import { FaCartPlus, FaRegUser, FaTable } from "react-icons/fa";
 import { Link } from 'react-router-dom';
 import "./Sidebar.css";
 
@@ -54,11 +54,15 @@ const Sidebar = () => {
 
           <div className="nav-menu">
             <Link to="/dashboard">
-              <FaTable className="table-icon"></FaTable> Data Table
+              <FaTable className="table-icon"></FaTable> All Users
             </Link>
             <br />
             <Link to="/dashboard/addProduct">
               <FaCartPlus className="table-icon"></FaCartPlus> Add Product
+            </Link>
+            <br />
+            <Link to="/dashboard/addUser">
+              <FaRegUser className="table-icon"></FaRegUser> Add User
             </Link>
           </div>
         </div>
