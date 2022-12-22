@@ -44,7 +44,7 @@ const Signup = () => {
 
     const saveUserData = (name, email) => {
       const user = { name, email, role: "user" };
-      fetch("http://localhost:5000/users", {
+      fetch("https://aide-task-server.vercel.app/users", {
         method: "POST",
         headers: {
           "content-type": "application/json",

@@ -30,7 +30,7 @@ const imageHostKey = "a4aaeaa90358c3b82f8146583ad4c398";
           img: imgData.data.url,
         };
 
-        fetch("http://localhost:5000/products", {
+        fetch("https://aide-task-server.vercel.app/products", {
           method: "POST",
           headers: {
             "content-type": "application/json",
@@ -50,21 +50,25 @@ const imageHostKey = "a4aaeaa90358c3b82f8146583ad4c398";
     
   }
     return (
-      <div>
-        <h2 className="add-title">Add Product</h2>
+      <div id="addProduct">
+        <div className="product-form">
+          <h2 className="add-title">Add Product</h2>
 
-        <form onSubmit={handleSubmit(handleAddCard)}>
-          <div>
-            <input type="file" {...register("img")} />
-          </div>
-          <div>
-            <input type="text" {...register("name")} id="" />
-          </div>
-          <div>
-            <input type="text" {...register("price")} id="" />
-          </div>
-          <input type="submit" />
-        </form>
+          <form onSubmit={handleSubmit(handleAddCard)}>
+            <div className="inputbox">
+              <input type="file" {...register("img")} required />
+            </div>
+            <div className="inputbox">
+              <input type="text" {...register("name")} required placeholder='item name' />
+            </div>
+            <div className="inputbox">
+              <input type="text" {...register("price")} required placeholder='item price'/>
+            </div>
+            <div className='button'>
+              <input type="submit" />
+            </div>
+          </form>
+        </div>
       </div>
     );
 };

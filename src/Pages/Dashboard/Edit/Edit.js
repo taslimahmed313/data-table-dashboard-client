@@ -33,7 +33,7 @@ const Edit = () => {
         }
         console.log(updateData)
         
-        fetch(`http://localhost:5000/edit/${data._id}`, {
+        fetch(`https://aide-task-server.vercel.app/edit/${data._id}`, {
           method: "PUT",
           headers: {
             "content-type": "application/json",
@@ -56,7 +56,7 @@ const Edit = () => {
 
     return (
       <div>
-        <h4>This Edit Page.</h4>
+        <h1 className='edit-title'>Edit Table Data</h1>
         <div>
           <form className="edit-form" onSubmit={handleUpdate}>
             <ul>

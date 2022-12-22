@@ -6,6 +6,9 @@ nav {
   padding-left: 5%;
   padding-right: 10%;
 }
+nav a {
+  text-decoration: none;
+}
 .logo {
   font-size: 30px;
   color: #3bb4a5;

@@ -15,10 +15,12 @@ const Navbar = () => {
     return (
       <div>
         <nav>
-          <h2 className="logo">
-            <img src={logo} alt="" />
-            ide
-          </h2>
+          <Link to="/">
+            <h2 className="logo">
+              <img src={logo} alt="" />
+              ide
+            </h2>
+          </Link>
           <ul>
             <li>
               <Link to="/">Home</Link>

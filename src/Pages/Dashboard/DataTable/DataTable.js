@@ -1,6 +1,7 @@
+import { useQuery } from '@tanstack/react-query';
 import jsPDF from 'jspdf';
 import "jspdf-autotable";
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { CSVLink } from 'react-csv';
 import { toast } from 'react-hot-toast';
 import { BiDotsVertical } from "react-icons/bi";
@@ -21,17 +22,19 @@ const DataTable = () => {
 
   const ref = useRef();
 
+   const { data: allData = [], refetch } = useQuery({
+     queryKey: ["allData"],
+     queryFn: async () => {
+       try {
+         const res = await fetch("https://aide-task-server.vercel.app/data");
+         const data = res.json();
+         return data;
+       } catch (error) {
+         console.log(error);
+       }
+     },
+   });
 
-  useEffect(()=>{
-    setLoading(true)
-    fetch("http://localhost:5000/data")
-    .then(res => res.json())
-    .then(data => {
-      setLoading(false)
-      setData(data);
-    })
-  },[])
-  console.log(data)
 
   const generatePDF = () => {
     const doc = new jsPDF();
@@ -41,14 +44,15 @@ const DataTable = () => {
 
 
   const handleDelete = id =>{
-    fetch(`http://localhost:5000/data/${id}`,{
+    fetch(`https://aide-task-server.vercel.app/data/${id}`,{
       method: "DELETE",
     })
     .then(res => res.json())
     .then(data => {
       console.log(data)
       if(data.deletedCount > 0){
-        toast.success("Data Deleted Successfully !!")
+        toast.success("Data Deleted Successfully !!");
+        refetch();
       }
     })
   }
@@ -62,7 +66,7 @@ const DataTable = () => {
         <div className="exports-btn">
           <div className="export-btn">
             <CSVLink
-              data={data}
+              data={allData}
               filename={"aide-datatable.csv"}
               target="_blank"
             >
@@ -97,7 +101,7 @@ const DataTable = () => {
             <BarLoader id="stand" color="#36d7b7" />
           ) : (
             <tbody>
-              {data.map((d) => (
+              {allData.map((d) => (
                 <tr key={d._id}>
                   <td>{d.name}</td>
                   <td>{d.age}</td>

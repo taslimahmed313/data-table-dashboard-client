@@ -43,7 +43,7 @@ export const router = createBrowserRouter([
       {
         path: "/dashboard/edit/:id",
         element: <Edit></Edit>,
-        loader: ({params}) => fetch(`http://localhost:5000/data/${params.id}`),
+        loader: ({params}) => fetch(`https://aide-task-server.vercel.app/data/${params.id}`),
       },
       {
         path: "/dashboard/addProduct",
