@@ -1,6 +1,6 @@
 import React from 'react';
 import { Outlet } from 'react-router-dom';
-import Sidebar from '../../Pages/Dashboard/Sidebar/Sidebar';
+import Collapse from '../../Pages/Collapse/Collapse';
 import Navbar from '../../Pages/Shared/Navbar/Navbar';
 import "./DashboardLayout.css";
 
@@ -10,7 +10,8 @@ const DashboardLayout = () => {
       <div>
         <Navbar></Navbar>
         <div id="dashboard-layout">
-          <Sidebar></Sidebar>
+          {/* <Sidebar></Sidebar> */}
+          <Collapse></Collapse>
           <Outlet></Outlet>
         </div>
       </div>

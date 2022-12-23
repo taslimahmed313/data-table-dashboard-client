@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Sansita+Swashed:wght@600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap");
 #addProduct {
   margin: 0;
   padding: 0;
@@ -7,7 +7,7 @@
   justify-content: center;
   align-items: center;
   height: 90vh;
-  font-family: "Sansita Swashed", cursive;
+  font-family: "Oswald", sans-serif;
 }
 .product-form {
   position: relative;
@@ -42,7 +42,7 @@
   background: none;
   padding: 10px;
   border-radius: 10px;
-  font-size: 1.2em;
+  font-size: 1em;
 }
 .product-form .button input {
   width: 50%;

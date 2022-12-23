@@ -36,7 +36,7 @@ const AddUser = () => {
              email: data.email,
            };
            fetch("http://localhost:5000/allUser", {
-             method: "POST",
+             method: "PUT",
              headers: {
                "content-type": "application/json",
              },
@@ -60,7 +60,7 @@ const AddUser = () => {
           <h2 className="add-title">Add Users</h2>
 
           <form onSubmit={handleSubmit(handleAddUser)}>
-            <div>
+            <div id='selected'>
               <div>
                 <label htmlFor="role">Role</label>
                 <select id="role" name="role" {...register("role")} required>
@@ -105,7 +105,7 @@ const AddUser = () => {
                 type="email"
                 {...register("email")}
                 required
-                placeholder="Your Email"
+                placeholder="Email"
               />
             </div>
             <div className="inputbox">
@@ -113,7 +113,7 @@ const AddUser = () => {
                 type="text"
                 {...register("userName")}
                 required
-                placeholder="User Name"
+                placeholder="user_name"
               />
             </div>
             <div className="button">

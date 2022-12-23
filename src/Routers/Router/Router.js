@@ -4,7 +4,7 @@ import Main from "../../Layout/Main/Main";
 import AddProduct from "../../Pages/Dashboard/AddProduct/AddProduct";
 import AddUser from "../../Pages/Dashboard/AddUser/AddUser";
 import AllUsers from "../../Pages/Dashboard/AllUsers/AllUsers";
-import Edit from "../../Pages/Dashboard/Edit/Edit";
+import UpdateUser from "../../Pages/Dashboard/UpdateUser/UpdateUser";
 import Home from "../../Pages/Home/Home/Home";
 import Login from "../../Pages/Shared/Authentication/Login/Login";
 import Signup from "../../Pages/Shared/Authentication/Signup/Signup";
@@ -42,10 +42,10 @@ export const router = createBrowserRouter([
         element: <AllUsers></AllUsers>,
       },
       {
-        path: "/dashboard/edit/:id",
-        element: <Edit></Edit>,
+        path: "/dashboard/updateUser/:id",
+        element: <UpdateUser></UpdateUser>,
         loader: ({ params }) =>
-          fetch(`https://aide-task-server.vercel.app/data/${params.id}`),
+          fetch(`http://localhost:5000/allUser/${params.id}`),
       },
       {
         path: "/dashboard/addProduct",

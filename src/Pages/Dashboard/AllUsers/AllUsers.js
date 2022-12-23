@@ -45,17 +45,17 @@ const AllUsers = () => {
 
 
   const handleDelete = id =>{
-    fetch(`https://aide-task-server.vercel.app/data/${id}`,{
+    fetch(`http://localhost:5000/allUser/${id}`, {
       method: "DELETE",
     })
-    .then(res => res.json())
-    .then(data => {
-      console.log(data)
-      if(data.deletedCount > 0){
-        toast.success("Data Deleted Successfully !!");
-        refetch();
-      }
-    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        if (data.deletedCount > 0) {
+          toast.success("Data Deleted Successfully !!");
+          refetch();
+        }
+      });
   }
   
     return (
@@ -137,8 +137,11 @@ const AllUsers = () => {
                   <td>{d.plan}</td>
                   <td
                     className={`${
-                      d.status === "Active" ? "active" : d.status === "Pending" ? "pending" : 
-                      "inactive"
+                      d.status === "Active"
+                        ? "active"
+                        : d.status === "Pending"
+                        ? "pending"
+                        : "inactive"
                     }`}
                   >
                     {d.status}
@@ -149,7 +152,7 @@ const AllUsers = () => {
                     </button>
                     <div className="dropdown-content">
                       <button className="btn-icon">
-                        <Link to={`/dashboard/edit/${d._id}`}>
+                        <Link to={`/dashboard/updateUser/${d._id}`}>
                           <CiEdit className="edit-icon" />
                         </Link>
                       </button>

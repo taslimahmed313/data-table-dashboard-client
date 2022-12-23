@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import { FaSearch } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import logo from "../../../assets/images/aide-logo (1).png";
 import { AuthContext } from '../../../Contexts/AuthProvider/AuthProvider';
@@ -13,7 +14,7 @@ const Navbar = () => {
     .catch(e => console.log(e))
   }
     return (
-      <div>
+      <div className="topnav">
         <nav>
           <Link to="/">
             <h2 className="logo">
@@ -21,6 +22,15 @@ const Navbar = () => {
               ide
             </h2>
           </Link>
+          <div >
+            <div className="search-container">
+                <input type="text" placeholder="Search.." name="search" />
+                <button>
+                  <FaSearch></FaSearch>
+                </button>
+            </div>
+          </div>
+
           <ul>
             <li>
               <Link to="/">Home</Link>
