@@ -6,8 +6,8 @@ import { CSVLink } from 'react-csv';
 import { toast } from 'react-hot-toast';
 import { BiDotsVertical } from "react-icons/bi";
 import { CiEdit } from "react-icons/ci";
-import { FaFileCsv, FaPrint, FaTrash } from 'react-icons/fa';
-import { ImFilePdf } from "react-icons/im";
+import { FaFileCsv, FaPrint, FaTrash, FaUser } from 'react-icons/fa';
+import { ImFilePdf, ImPencil } from "react-icons/im";
 import { TiArrowLoop, TiArrowMoveOutline, TiCogOutline } from "react-icons/ti";
 import { Link } from 'react-router-dom';
 import BarLoader from 'react-spinners/BarLoader';
@@ -113,14 +113,36 @@ const AllUsers = () => {
                         {d.role}
                       </>
                     ) : d.role === "Maintainer" ? (
-                      <><TiArrowLoop/>{d.role}</>
+                      <>
+                        <TiArrowLoop />
+                        {d.role}
+                      </>
+                    ) : d.role === "Admin" ? (
+                      <>
+                        <TiArrowMoveOutline />
+                        {d.role}
+                      </>
+                    ) : d.role === "Editor" ? (
+                      <>
+                        <ImPencil />
+                        {d.role}
+                      </>
                     ) : (
-                      d.role === "Admin" ? <><TiArrowMoveOutline/>{d.role}</>:<></>
+                      <>
+                        <FaUser />
+                        {d.role}
+                      </>
                     )}
                   </td>
                   <td>{d.plan}</td>
-                  <td>{d.status}</td>
-                  <td>{d.action}</td>
+                  <td
+                    className={`${
+                      d.status === "Active" ? "active" : d.status === "Pending" ? "pending" : 
+                      "inactive"
+                    }`}
+                  >
+                    {d.status}
+                  </td>
                   <td className="dropdown">
                     <button className="dropbtn">
                       <BiDotsVertical />

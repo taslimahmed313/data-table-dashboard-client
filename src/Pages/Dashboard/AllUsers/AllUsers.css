@@ -56,6 +56,35 @@
   z-index: 50;
 }
 
+/* ClassName Rendering */
+.active {
+  background: linear-gradient(
+      0deg,
+      rgba(255, 255, 255, 0.88),
+      rgba(255, 255, 255, 0.88)
+    ),
+    #4caf50;
+  color: #56ca00;
+}
+.pending {
+  background: linear-gradient(
+      0deg,
+      rgba(255, 255, 255, 0.88),
+      rgba(255, 255, 255, 0.88)
+    ),
+    #ed6c02;
+  color: #ffb400;
+}
+.inactive {
+  background: linear-gradient(
+      0deg,
+      rgba(255, 255, 255, 0.88),
+      rgba(255, 255, 255, 0.88)
+    ),
+    #8a8d93;
+  color: #8a8d93;
+}
+
 .dropbtn {
   color: rgb(2, 2, 2);
   padding: 3px;
