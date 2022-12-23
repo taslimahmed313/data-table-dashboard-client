@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Sansita+Swashed:wght@500&display=swap");
 .products {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -5,8 +7,10 @@
   gap: 20px;
 }
 .product-section {
-  margin-top: 50px;
-  margin-left: 100px;
+  margin: 50px 100px 30px;
+  font-family: "Roboto Slab", serif;
+  color: #3bb4a5;
+  font-weight: 500;
 }
 .loader {
   width: 80px;

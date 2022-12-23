@@ -18,9 +18,10 @@ const Products = () => {
     },[])
 
     return (
-      <div>
-        <h2 className="product-section">Our Available Products Here</h2>
-        
+      <div id="shop">
+        <h1 className="product-section">Our Available Products !</h1>
+
+        <div>
           {loading ? (
             <div className="loader">
               <BeatLoader color="#36d7b7" />
@@ -32,8 +33,11 @@ const Products = () => {
               ))}
             </div>
           )}
-        
-        <footer className='footer'>Copyright © 2021 aide. All rights reserved.</footer>
+        </div>
+
+        <footer className="footer">
+          Copyright © 2021 aide. All rights reserved.
+        </footer>
       </div>
     );
 };

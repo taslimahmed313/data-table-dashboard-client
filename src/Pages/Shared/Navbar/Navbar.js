@@ -26,14 +26,16 @@ const Navbar = () => {
             <div className="search-container">
                 <input type="text" placeholder="Search.." name="search" />
                 <button>
-                  <FaSearch></FaSearch>
+                  <FaSearch className='search-icon'></FaSearch>
                 </button>
             </div>
           </div>
-
           <ul>
             <li>
               <Link to="/">Home</Link>
+            </li>
+            <li>
+              <a href='#shop'>Shop</a>
             </li>
             {user ? (
               <>
@@ -45,9 +47,6 @@ const Navbar = () => {
               <>
                 <li>
                   <Link to="/login">Login</Link>
-                </li>
-                <li>
-                  <Link to="/signup">Signup</Link>
                 </li>
               </>
             )}
