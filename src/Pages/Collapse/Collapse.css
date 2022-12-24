@@ -55,6 +55,7 @@
   height: 100vh;
   background: rgb(38, 40, 40);
   transition: 0.5s;
+  border-radius: 0px;
 }
 #sidebar.active {
   left: 0px;
