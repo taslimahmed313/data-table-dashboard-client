@@ -3,8 +3,8 @@ import DashboardLayout from "../../Layout/DashboardLayout/DashboardLayout";
 import Main from "../../Layout/Main/Main";
 import AddProduct from "../../Pages/Dashboard/AddProduct/AddProduct";
 import AddUser from "../../Pages/Dashboard/AddUser/AddUser";
-import AllUsers from "../../Pages/Dashboard/AllUsers/AllUsers";
 import UpdateUser from "../../Pages/Dashboard/UpdateUser/UpdateUser";
+import UserList from "../../Pages/Dashboard/UserList/UserList";
 import Home from "../../Pages/Home/Home/Home";
 import Login from "../../Pages/Shared/Authentication/Login/Login";
 import Signup from "../../Pages/Shared/Authentication/Signup/Signup";
@@ -42,7 +42,7 @@ export const router = createBrowserRouter([
         path: "/dashboard",
         element: (
           <AdminRouter>
-            <AllUsers></AllUsers>
+            <UserList></UserList>
           </AdminRouter>
         ),
       },
@@ -66,7 +66,11 @@ export const router = createBrowserRouter([
       },
       {
         path: "/dashboard/addUser",
-        element: <AdminRouter><AddUser></AddUser></AdminRouter>,
+        element: (
+          <AdminRouter>
+            <AddUser></AddUser>
+          </AdminRouter>
+        ),
       },
     ],
   },

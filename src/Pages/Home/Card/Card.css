@@ -16,16 +16,16 @@
   height: 100px;
 }
 .card p {
-  margin-top: 5px;
+  margin-top: 20px;
 }
 .quantity {
   display: flex;
   align-items: center;
-  gap: 5px;
+  gap: 10px;
   margin-top: 20px;
   cursor: pointer;
   justify-content: space-between;
-  padding: 0px 15px;
+
   background: #3cac99;
   color: white;
   padding: 8px 10px;

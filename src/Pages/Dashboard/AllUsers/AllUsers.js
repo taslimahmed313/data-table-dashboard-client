@@ -81,12 +81,16 @@ const AllUsers = () => {
           </div>
           <div className="export-btn">
             <ReactToPrint
-              trigger={() => (
-                <div>
-                  <FaPrint></FaPrint> Print
-                </div>
-              )}
+              trigger={() => {
+                return (
+                  <div>
+                    <FaPrint></FaPrint> Print
+                  </div>
+                );
+              }}
               content={() => ref.current}
+              documentTitle="All Users"
+              pageStyle="print"
             ></ReactToPrint>
           </div>
         </div>
@@ -147,9 +151,11 @@ const AllUsers = () => {
                     {d.status}
                   </td>
                   <td className="dropdown">
-                    <button className="dropbtn">
-                      <BiDotsVertical />
-                    </button>
+                    <div>
+                      <button className="dropbtn">
+                        <BiDotsVertical />
+                      </button>
+                    </div>
                     <div className="dropdown-content">
                       <button className="btn-icon">
                         <Link to={`/dashboard/updateUser/${d._id}`}>

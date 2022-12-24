@@ -22,25 +22,33 @@
   color: #3bb4a5;
   font-family: "Sansita Swashed", serif;
 }
+
 .table {
   width: 100%;
   border-collapse: collapse;
   margin-top: 10px;
+  text-align: start;
 }
-.table thead,
+thead {
+  border-bottom: 1px solid #dcdee4;
+}
+thead th {
+  padding: 0;
+}
+/* .table thead,
 .table tbody {
   padding: 10px;
 }
 .table th {
   background-color: #0e1d3b;
   color: #ffffff;
-}
+} */
 
 /* .table tbody tr:nth-child(even) {
   background-color: #e7e5e5;
 } */
 
-.table td,
+/* .table td,
 .table th {
   border: 1px solid rgb(255, 255, 255);
   text-align: center;
@@ -58,7 +66,7 @@
   position: sticky;
   top: 0px;
   z-index: 50;
-}
+} */
 
 /* ClassName Rendering */
 .active {

@@ -32,13 +32,13 @@ const Collapse = () => {
               </Link>
             </li>
             <li>
-              <Link className="icon-alignment" to="/dashboard/addProduct">
-                <FaCartPlus className="table-icon"></FaCartPlus> Add Product
+              <Link className="icon-alignment" to="/dashboard/addUser">
+                <FaRegUser className="table-icon"></FaRegUser> Add User
               </Link>
             </li>
             <li>
-              <Link className="icon-alignment" to="/dashboard/addUser">
-                <FaRegUser className="table-icon"></FaRegUser> Add User
+              <Link className="icon-alignment" to="/dashboard/addProduct">
+                <FaCartPlus className="table-icon"></FaCartPlus> Add Product
               </Link>
             </li>
           </ul>
