@@ -13,9 +13,16 @@ const Card = ({product}) => {
 
           {count > 0 ? (
             <p className="quantity">
-              Quantity: <FaPlusCircle onClick={() => setCount(count + 1)} />
+              Quantity:{" "}
+              <FaPlusCircle
+                className="count-icon"
+                onClick={() => setCount(count + 1)}
+              />
               {count}
-              <FaMinusCircle onClick={() => setCount(count - 1)} />
+              <FaMinusCircle
+                className="count-icon"
+                onClick={() => setCount(count - 1)}
+              />
             </p>
           ) : (
             <button onClick={() => setCount(count + 1)}>Add To Cart</button>

@@ -47,7 +47,10 @@ const Login = () => {
               <div className="button">
                 <input type="submit" value="Login" />
               </div>
-              <p>New to Aide solutions ltd? please <Link to="/signup">Signup</Link> </p>
+              <p className="auth">
+                New to Aide solutions ltd? please{" "}
+                <Link to="/signup">Signup</Link>{" "}
+              </p>
             </form>
           </div>
         </div>

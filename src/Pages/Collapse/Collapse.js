@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaCartPlus, FaRegUser, FaTable } from 'react-icons/fa';
+import { FaCartPlus, FaHome, FaRegClipboard, FaRegUser } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import "./Collapse.css";
 
@@ -21,22 +21,25 @@ const Collapse = () => {
         <div id="sidebar" onClick={remove}>
           <ul>
             <li>
-              <Link to="/dashboard">
-                <FaTable className="table-icon"></FaTable> All Users
+              <Link className="icon-alignment" to="/">
+                <FaHome className="table-icon"></FaHome> Home
               </Link>
             </li>
             <li>
-              <Link to="/dashboard/addProduct">
+              <Link className="icon-alignment" to="/dashboard">
+                <FaRegClipboard className="table-icon"></FaRegClipboard> All
+                Users
+              </Link>
+            </li>
+            <li>
+              <Link className="icon-alignment" to="/dashboard/addProduct">
                 <FaCartPlus className="table-icon"></FaCartPlus> Add Product
               </Link>
             </li>
             <li>
-              <Link to="/dashboard/addUser">
+              <Link className="icon-alignment" to="/dashboard/addUser">
                 <FaRegUser className="table-icon"></FaRegUser> Add User
               </Link>
-            </li>
-            <li>
-              <Link>Home</Link>
             </li>
           </ul>
         </div>
