@@ -77,3 +77,7 @@
   background-color: #c1c1c0;
   color: black;
 }
+.error {
+  color: red;
+  margin-top: -20px;
+}

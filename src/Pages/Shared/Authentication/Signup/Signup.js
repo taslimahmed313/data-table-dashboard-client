@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { toast } from 'react-hot-toast';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../../Contexts/AuthProvider/AuthProvider';
@@ -11,14 +11,21 @@ const Signup = () => {
     const location = useLocation();
     const from = location.state?.from?.pathname || "/";
 
+    const [error, setError] = useState("");
+
 
     const handleSignup = event =>{
         event.preventDefault();
+        setError("")
         const form = event.target;
         const name = form.name.value;
         const email = form.email.value;
         const password = form.password.value;
 
+        if(password.length < 6){
+          setError("Password Must be 6 Character")
+        }
+        
         createUser(email, password)
         .then(result => {
             const user = result.user;
@@ -76,6 +83,7 @@ const Signup = () => {
                 <input type="password" required name="password" />
                 <span>Password</span>
               </div>
+              <p className='error'>{error && error }</p>
               <div className="button">
                 <input type="submit" value="Sign Up" />
               </div>
