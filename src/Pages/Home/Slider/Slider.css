@@ -23,7 +23,7 @@
 }
 .principle {
   left: 50%;
-  top: 40%;
+  top: 350px;
   transform: translate(-50%, -50%);
   position: absolute;
   letter-spacing: 2px;

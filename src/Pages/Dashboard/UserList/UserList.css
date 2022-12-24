@@ -1,9 +1,75 @@
+#dropbtn {
+  border: 1px solid rgb(220, 218, 218);
+  padding: 7px 30px;
+  border-radius: 5px;
+  color: #2d2e2f;
+  cursor: pointer;
+  font-size: 14px;
+  margin: 20px 0px 20px 20px;
+  text-align: center;
+}
+
+.dropdown-column {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdownContent {
+  display: none;
+  position: absolute;
+  right: 480px;
+  top: 157px;
+  background-color: #f1f1f1;
+  min-width: 180px;
+  overflow: auto;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdownContent label {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-column label:hover {
+  background-color: rgb(145, 144, 144);
+}
+
+.show {
+  display: block;
+}
+
+/*  */
+
 .userList {
-  width: 1156px;
+  width: 1090px;
 }
 #table {
-  height: 400px;
+  height: 645px;
+  border: 2px solid rgb(212, 205, 205);
 }
+/* Exports Button */
+.exports-btn {
+  display: flex;
+}
+.export-btn {
+  border: 1px solid rgb(220, 218, 218);
+  padding: 7px 30px;
+  border-radius: 5px;
+  color: #2d2e2f;
+  cursor: pointer;
+  font-size: 14px;
+  margin: 20px 0px 20px 20px;
+  text-align: center;
+}
+.csv a {
+  color: #2b2c2c;
+  text-decoration: none;
+  font-size: 14px;
+}
+
 table {
   width: 100%;
 }
@@ -23,7 +89,7 @@ table tbody tr {
   border: 1px solid rgb(110, 108, 108);
 }
 table tbody td {
-  padding: 16px 24px;
+  padding: 8px 24px;
 }
 .user {
   display: flex;
@@ -134,7 +200,7 @@ table tbody td {
 }
 .dropdown-content button {
   font-size: 20px;
-  margin-top: 15px;
+  margin-top: 12px;
   padding: 7px;
   display: inline-block;
   color: #3bb4a5;
@@ -149,7 +215,7 @@ table tbody td {
   color: #3bb4a5;
 }
 .btn-icon:hover {
-  transform: scale(1.1);
+  transform: scale(1.05);
   transition: 0.5s;
 }
 
