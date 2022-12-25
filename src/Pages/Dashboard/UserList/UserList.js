@@ -33,7 +33,7 @@ const UserList = () => {
       queryKey: ["users"],
       queryFn: async () => {
         try {
-          const res = await fetch("http://localhost:5000/allUser");
+          const res = await fetch(" https://aide-task-server.vercel.app/allUser");
           const data = res.json();
           return data;
         } catch (error) {
@@ -49,7 +49,7 @@ const UserList = () => {
     };
 
     const handleDelete = (id) => {
-      fetch(`http://localhost:5000/allUser/${id}`, {
+      fetch(` https://aide-task-server.vercel.app/allUser/${id}`, {
         method: "DELETE",
       })
         .then((res) => res.json())
@@ -235,7 +235,7 @@ const UserList = () => {
           <div>
             <div>
               <table ref={ref} id="dataTable">
-                <thead>
+                <thead id='sticky'>
                   <tr>
                     {columnShow.user === "user" && <th scope="col">USER</th>}
                     {columnShow.email === "email" && <th scope="col">EMAIL</th>}

@@ -35,7 +35,7 @@ const UpdateUser = () => {
                status: data.status,
                email: data.email,
              };
-             fetch(`http://localhost:5000/allUser/${user._id}`, {
+             fetch(` https://aide-task-server.vercel.app/allUser/${user._id}`, {
                method: "PUT",
                headers: {
                  "content-type": "application/json",

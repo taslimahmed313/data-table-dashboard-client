@@ -54,7 +54,7 @@ export const router = createBrowserRouter([
           </AdminRouter>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/allUser/${params.id}`),
+          fetch(` https://aide-task-server.vercel.app/allUser/${params.id}`),
       },
       {
         path: "/dashboard/addProduct",

@@ -1,3 +1,6 @@
+#title {
+  color: #3bb4a5;
+}
 #selected {
   display: grid;
   grid-template-columns: repeat(2, 1fr);

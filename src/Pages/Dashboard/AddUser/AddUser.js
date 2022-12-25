@@ -35,8 +35,8 @@ const AddUser = () => {
              status: data.status,
              email: data.email,
            };
-           fetch("http://localhost:5000/allUser", {
-             method: "PUT",
+           fetch(" https://aide-task-server.vercel.app/allUser", {
+             method: "POST",
              headers: {
                "content-type": "application/json",
              },
@@ -57,7 +57,7 @@ const AddUser = () => {
     return (
       <div id="addProduct">
         <div className="product-form">
-          <h2 className="add-title">Add Users</h2>
+          <h2 id="title">Add Users</h2>
 
           <form onSubmit={handleSubmit(handleAddUser)}>
             <div id='selected'>

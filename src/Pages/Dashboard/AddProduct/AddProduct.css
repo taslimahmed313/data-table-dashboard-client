@@ -9,6 +9,9 @@
   height: 90vh;
   font-family: "Oswald", sans-serif;
 }
+#product-title {
+  color: #3bb4a5;
+}
 .product-form {
   position: relative;
   padding: 50px 50px;

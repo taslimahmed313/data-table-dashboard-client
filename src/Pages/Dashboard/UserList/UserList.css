@@ -66,8 +66,15 @@
   margin-left: 50px;
 }
 #table {
-  height: 645px;
+  height: 500px;
+  width: 100%;
   border: 2px solid rgb(212, 205, 205);
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  overflow-y: scroll;
+}
+#sticky {
+  position: sticky;
+  top: 0;
 }
 /* Exports Button */
 .exports-btn {
@@ -123,9 +130,7 @@ table thead th {
   font-size: 14px;
   letter-spacing: 0.17px;
 }
-table tbody tr {
-  border: 1px solid rgb(233, 236, 237);
-}
+
 table tbody tr:hover {
   background: rgb(237, 234, 234);
 }

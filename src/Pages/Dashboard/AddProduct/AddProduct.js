@@ -52,19 +52,29 @@ const imageHostKey = "a4aaeaa90358c3b82f8146583ad4c398";
     return (
       <div id="addProduct">
         <div className="product-form">
-          <h2 className="add-title">Add Product</h2>
+          <h2 id="product-title">Add Product</h2>
 
           <form onSubmit={handleSubmit(handleAddCard)}>
             <div className="inputbox">
               <input type="file" {...register("img")} required />
             </div>
             <div className="inputbox">
-              <input type="text" {...register("name")} required placeholder='item name' />
+              <input
+                type="text"
+                {...register("name")}
+                required
+                placeholder="item name"
+              />
             </div>
             <div className="inputbox">
-              <input type="text" {...register("price")} required placeholder='item price'/>
+              <input
+                type="text"
+                {...register("price")}
+                required
+                placeholder="item price"
+              />
             </div>
-            <div className='button'>
+            <div className="button">
               <input type="submit" />
             </div>
           </form>
