@@ -7,8 +7,8 @@
 }
 #toggle {
   position: fixed;
-  top: 5px;
-  right: 20px;
+  top: 20px;
+  right: 30px;
   width: 60px;
   height: 45px;
   background: #3bb4a5;
@@ -19,7 +19,7 @@
   border-radius: 5px;
 }
 #toggle:hover {
-  background: #66c1dc;
+  background: rgb(18, 231, 185);
 }
 #toggle::before {
   content: "";
@@ -71,7 +71,7 @@
   padding: 10px 10px;
 }
 #sidebar ul li:hover {
-  background-color: chocolate;
+  background-color: rgb(25, 25, 24);
 }
 #sidebar ul li a {
   text-decoration: none;

@@ -84,10 +84,9 @@ const UserList = () => {
     }
 
    
-
     return (
       <div className="userList">
-        <h1>User List</h1>
+        <h1 id='table-tile'>User List</h1>
 
         <div id="table">
           <div className="exports-btn">
@@ -106,7 +105,7 @@ const UserList = () => {
                 trigger={() => {
                   return (
                     <div className="export-btn">
-                      <CiExport></CiExport> PRINT
+                      <CiExport className="export-icon"></CiExport> PRINT
                     </div>
                   );
                 }}
@@ -131,6 +130,7 @@ const UserList = () => {
                     onClick={handleColumn}
                     type="checkbox"
                     name="user"
+                    id="user"
                     value={columnShow.user === "user" ? "" : "user"}
                     defaultChecked={columnShow.user === "user" ? true : false}
                   />
@@ -145,6 +145,7 @@ const UserList = () => {
                     onClick={handleColumn}
                     type="checkbox"
                     name="email"
+                    id="email"
                     value={columnShow.email === "email" ? "" : "email"}
                     defaultChecked={columnShow.email === "email" ? true : false}
                   />
@@ -159,6 +160,7 @@ const UserList = () => {
                     onChange={handleColumn}
                     type="checkbox"
                     name="plan"
+                    id="plan"
                     value={columnShow.plan === "plan" ? "" : "plan"}
                     defaultChecked={columnShow.plan === "plan" ? true : false}
                   />
@@ -173,6 +175,7 @@ const UserList = () => {
                     onChange={handleColumn}
                     type="checkbox"
                     name="role"
+                    id="role"
                     value={columnShow.role === "role" ? "" : "role"}
                     defaultChecked={columnShow.role === "role" ? true : false}
                   />
@@ -187,6 +190,7 @@ const UserList = () => {
                     onChange={handleColumn}
                     type="checkbox"
                     name="status"
+                    id="status"
                     value={columnShow.status === "status" ? "" : "status"}
                     defaultChecked={
                       columnShow.status === "status" ? true : false
@@ -203,6 +207,7 @@ const UserList = () => {
                     onChange={handleColumn}
                     type="checkbox"
                     name="action"
+                    id="action"
                     value={columnShow.action === "action" ? "" : "action"}
                     defaultChecked={
                       columnShow.action === "action" ? true : false
@@ -211,6 +216,19 @@ const UserList = () => {
                   Action
                 </label>
               </div>
+            </div>
+            <div>
+              <div className="search-container">
+                <input
+                  id="search-alignment"
+                  type="text"
+                  placeholder="Search.."
+                  name="search"
+                />
+              </div>
+            </div>
+            <div className="export-btn" id="btn-add">
+              <Link to="/dashboard/addUser">ADD USER</Link>
             </div>
           </div>
 
